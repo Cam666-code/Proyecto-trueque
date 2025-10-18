@@ -1,0 +1,147 @@
+/* === Estilo general === */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top right, #052659, #021024);
+  color: #C1E8FF;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* === Barra de navegación === */
+.navbar {
+  background: rgba(2, 16, 36, 0.7) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(193, 232, 255, 0.1);
+}
+
+.navbar .nav-link {
+  color: #C1E8FF !important;
+  font-weight: 50;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #7DA0CA !important;
+}
+
+.btn-outline-dark {
+  border-color: #7DA0CA;
+  color: #C1E8FF;
+}
+
+.btn-outline-dark:hover {
+  background: linear-gradient(90deg, #7DA0CA, #C1E8FF);
+  color: #021024;
+  border: none;
+}
+
+/* === Hero principal (texto + imagen) === */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6rem 8%;
+  gap: 2rem;
+}
+
+/* Texto a la izquierda */
+.contenido-mitad {
+  flex: 1;
+  max-width: 50%;
+}
+
+.contenido-mitad h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #7DA0CA, #C1E8FF);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+}
+
+.contenido-mitad h2 {
+  color: #7DA0CA;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.contenido-mitad p {
+  color: #C1E8FF;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+
+/* Botón principal */
+.btn-lg {
+  background: linear-gradient(90deg, #7DA0CA, #C1E8FF);
+  color: #021024;
+  border: none;
+  border-radius: 50px;
+  padding: 0.8rem 2.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(193, 232, 255, 0.4);
+}
+
+.btn-lg:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(193, 232, 255, 0.7);
+}
+
+/* Imagen a la derecha */
+.hero-image {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: radial-gradient(circle at center, rgba(125,160,202,0.25), transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+}
+
+.hero-image img {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  opacity: 0.95; /* la imagen se ve clara */
+  border-radius: 15px;
+  z-index: 1;
+  box-shadow: 0 0 50px rgba(125,160,202,0.25);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 80px rgba(193,232,255,0.6);
+}
+
+/* Fondo animado suave */
+body::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 130%;
+  height: 130%;
+  background: radial-gradient(circle at 30% 30%, rgba(125,160,202,0.2), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(193,232,255,0.2), transparent 60%);
+  filter: blur(120px);
+  z-index: -1;
+  animation: movimiento 10s ease-in-out infinite alternate;
+}
+
+@keyframes movimiento {
+  from { transform: translate(-40px, -20px); }
+  to { transform: translate(40px, 20px); }
+}
